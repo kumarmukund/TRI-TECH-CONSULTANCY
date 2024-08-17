@@ -248,8 +248,7 @@
               </button>
             </div>
             <form
-            action="/quotation/"
-              method="POST"
+            action="/contact us/"
               class="py-6 px-9"
               data-netlify="true"
             >
@@ -296,22 +295,6 @@
                   />
              </label>
               </div>
-              <div class="mb-5">
-                <label
-                  for="address"
-                  class="mb-3 block text-base font-medium text-[#07074D]"
-                >
-                  Full address
-                </label>
-                <textarea
-                  rows="4"
-                  name="address"
-                  id="address"
-                  placeholder="Explain your full address"
-                  class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                ></textarea>
-              </div>
-  
               <div class="mb-5">
                 <label
                   for="message"
@@ -384,4 +367,14 @@
         </div>
       </div>
     </section>
+    <script>
+        const formWrapper = document.querySelector(".formbold-form-wrapper");
+        const crossIcon = document.querySelector(".cross-icon");
+        const chatIcon = document.querySelector(".chat-icon");
+        function chatboxToogleHandler() {
+          formWrapper.classList.toggle("hidden");
+          crossIcon.classList.toggle("hidden");
+          chatIcon.classList.toggle("hidden");
+        }
+      </script>
   </body>
