@@ -59,11 +59,17 @@
         }
       });
     </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- NAVBAR COMPONENT -->
     <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
-      <img class="w-16 rounded-full" src="TT LOGO.png" alt="TRI TECH" />
+      <a href="index.html">
+        <img class="w-16 rounded-full" src="TT LOGO.png" alt="TRI TECH"
+      /></a>
       <a href="index.html" class="flex items-center">
         &nbsp; &nbsp; &nbsp;
         <span class="self-center whitespace-nowrap text-xl font-semibold"
@@ -175,7 +181,63 @@
         </div>
       </nav>
     </div>
+    <div class="w-full h-full flex justify-center items-center">
+      <h1 id="typewriter" class="text-4xl font-bold"></h1>
+    </div>
+    <script>
+      const words = ["Jai Sri Ram", "Welcome to", "Tri Tech Consultancy"];
+      let i = 0;
+      let j = 0;
+      let currentWord = "";
+      let isDeleting = false;
 
+      function type() {
+        currentWord = words[i];
+        if (isDeleting) {
+          document.getElementById("typewriter").textContent =
+            currentWord.substring(0, j - 1);
+          j--;
+          if (j == 0) {
+            isDeleting = false;
+            i++;
+            if (i == words.length) {
+              i = 0;
+            }
+          }
+        } else {
+          document.getElementById("typewriter").textContent =
+            currentWord.substring(0, j + 1);
+          j++;
+          if (j == currentWord.length) {
+            isDeleting = true;
+          }
+        }
+        setTimeout(type, 100);
+      }
+
+      type();
+    </script>
+    <br />
+    <!-- MAP component -->
+    <!-- <div class="container mx-auto px-1 sm:px-1 lg:px-1">
+      <h1
+        class="text-3xl sm:text-4xl lg:text-3xl font-bold leading-tight text-center mt-4 sm:mt-4 lg:mt-4"
+      >
+        All jobs are chargeable
+      </h1>
+      <h3
+        class="text-1xl sm:text-1xl lg:text-2xl leading-tight text-center mt-1 sm:mt-1 lg:mt-1"
+      >
+        Registration Amount <strong>3000/-</strong> is fixed.
+      </h3>
+      <p
+        class="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed mt-1 sm:mt-1 lg:mt-1 text-center"
+      >
+        You will get call for registration amount only from
+        <strong>+91 9407172146 & +91 9263688785</strong>
+      </p>
+    </div>
+    <br /> -->
     <!-- component -->
     <div
       class="px-3 md:lg:xl:px-40 border-t border-b py-20 bg-opacity-10"
@@ -631,6 +693,89 @@
         </div>
       </div>
     </section>
+    <br />
+    <div class="relative py-16">
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20"
+      >
+        <div
+          class="blur-[106px] h-56 bg-gradient-to-br from-teal-500 to-purple-400 dark:from-blue-700"
+        ></div>
+        <div
+          class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+        <div class="relative">
+          <div class="flex items-center justify-center -space-x-2">
+            <img
+              loading="lazy"
+              width="400"
+              height="400"
+              src="https://randomuser.me/api/portraits/women/12.jpg"
+              alt="member photo"
+              class="h-8 w-8 rounded-full object-cover"
+            />
+            <img
+              loading="lazy"
+              width="200"
+              height="200"
+              src="https://randomuser.me/api/portraits/women/45.jpg"
+              alt="member photo"
+              class="h-12 w-12 rounded-full object-cover"
+            />
+            <img
+              loading="lazy"
+              width="200"
+              height="200"
+              src="https://randomuser.me/api/portraits/women/60.jpg"
+              alt="member photo"
+              class="z-10 h-16 w-16 rounded-full object-cover"
+            />
+            <img
+              loading="lazy"
+              width="200"
+              height="200"
+              src="https://randomuser.me/api/portraits/women/4.jpg"
+              alt="member photo"
+              class="relative h-12 w-12 rounded-full object-cover"
+            />
+            <img
+              loading="lazy"
+              width="200"
+              height="200"
+              src="https://randomuser.me/api/portraits/women/34.jpg"
+              alt="member photo"
+              class="h-8 w-8 rounded-full object-cover"
+            />
+          </div>
+
+          <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
+            <h1
+              class="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl"
+            >
+              Get Started now
+            </h1>
+            <p class="text-center text-xl text-gray-600 dark:text-gray-300">
+              Click on button below to know more jobs.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+              <a
+                href="job.html"
+                class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-teal-500 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+              >
+                <span
+                  class="relative text-base font-semibold text-white dark:text-dark"
+                  >job</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <h2
       class="mx-auto p-8 text-2xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-align:center"
     >
