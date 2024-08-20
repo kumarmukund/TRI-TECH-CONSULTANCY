@@ -146,6 +146,63 @@
           </div>
         </nav>
       </div>
+      <div class="w-full h-full flex justify-center items-center">
+        <h1 id="typewriter" class="text-4xl font-bold"></h1>
+      </div>
+      <script>
+        const words = ["Jai Sri Ram", "Welcome to", "Tri Tech Consultancy"];
+        let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
+  
+        function type() {
+          currentWord = words[i];
+          if (isDeleting) {
+            document.getElementById("typewriter").textContent =
+              currentWord.substring(0, j - 1);
+            j--;
+            if (j == 0) {
+              isDeleting = false;
+              i++;
+              if (i == words.length) {
+                i = 0;
+              }
+            }
+          } else {
+            document.getElementById("typewriter").textContent =
+              currentWord.substring(0, j + 1);
+            j++;
+            if (j == currentWord.length) {
+              isDeleting = true;
+            }
+          }
+          setTimeout(type, 100);
+        }
+  
+        type();
+      </script>
+  
+      <!-- MAP component -->
+      <div class="container mx-auto px-1 sm:px-1 lg:px-1">
+        <h1
+          class="text-3xl sm:text-4xl lg:text-3xl font-bold leading-tight text-center mt-4 sm:mt-4 lg:mt-4"
+        >
+          All jobs are chargeable
+        </h1>
+        <h3
+          class="text-1xl sm:text-1xl lg:text-2xl leading-tight text-center mt-1 sm:mt-1 lg:mt-1"
+        >
+          Registration Amount <strong>3000/-</strong> is fixed.
+        </h3>
+        <p
+          class="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed mt-1 sm:mt-1 lg:mt-1 text-center"
+        >
+          You will get call for registration amount only from
+          <strong>+91 9407172146 & +91 9263688785</strong>
+        </p>
+      </div> <br>
+      
     <section class="mb-32">
       <div
         id="map"
@@ -154,6 +211,14 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d682.4946591521285!2d77.46659257313158!3d23.25150297248569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43d0177be08d%3A0xa3b14f8a4a7ea034!2sTRI%20TECH%20CSUTANCY!5e0!3m2!1sen!2sin!4v1723612146281!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
         ></iframe>
+      </div>
+      <br>
+      <div class="container mx-auto px-1 sm:px-1 lg:px-1">
+        <h3
+        class="text-1xl sm:text-1xl lg:text-2xl leading-tight text-center mt-1 sm:mt-1 lg:mt-1"
+      >
+        Click on chat icon for job apply.
+      </h3>
       </div>
       <div class="navbar-menu relative z-50 hidden">
         <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -367,6 +432,7 @@
         </div>
       </div>
     </section>
+    
     <script>
         const formWrapper = document.querySelector(".formbold-form-wrapper");
         const crossIcon = document.querySelector(".cross-icon");
